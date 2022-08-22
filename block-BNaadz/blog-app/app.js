@@ -51,11 +51,6 @@ app.use(
 app.use(flash());
 app.use(userInfo);
 
-app.use((req, res, next) => {
-  console.log(req.user);
-  next();
-});
-
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/articles", articlesRouter);

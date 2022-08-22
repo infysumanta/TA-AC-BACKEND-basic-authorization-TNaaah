@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mongoose = require("mongoose-slug-generator");
+const slug = require("mongoose-slug-generator");
 
 mongoose.plugin(slug);
 
@@ -11,7 +11,7 @@ const articleSchema = new Schema(
     description: { type: String, required: true },
     likes: { type: Number, default: 0 },
     comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
-    author: { type: String },
+    author: { type: Schema.Types.ObjectId, ref: "User", required: true },
     slug: { type: String, slug: "title", unique: true },
   },
   {
