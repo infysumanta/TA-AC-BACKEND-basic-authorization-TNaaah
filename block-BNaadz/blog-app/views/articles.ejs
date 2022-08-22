@@ -1,0 +1,14 @@
+<%- include("partials/header"); %>
+<div class="container mt-5">
+  <% articles.forEach(article => { %>
+  <a href="/articles/<%= article.slug %>">
+    <div class="card mt-5">
+      <div class="card-header">
+        <h2><%= article.title %></h2>
+      </div>
+      <div class="card-body"><%= article.description %></div>
+    </div>
+  </a>
+  <% }) %>
+</div>
+<%- include("partials/footer"); %>
