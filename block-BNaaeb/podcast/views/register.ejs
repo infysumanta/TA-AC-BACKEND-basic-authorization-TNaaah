@@ -1,0 +1,50 @@
+<%- include("partials/header"); %>
+<div class="wrapper">
+  <form class="form-signin" method="POST" action="/users/register">
+    <h2 class="form-signin-heading">Create Account</h2>
+    <% //if(error) { %>
+    <legend class="color-danger"><%= //error %></legend>
+    <% //} %>
+    <input
+      type="text"
+      class="form-control"
+      name="firstName"
+      placeholder="First Name"
+      required=""
+      autofocus=""
+    />
+    <input
+      type="text"
+      class="form-control"
+      name="lastName"
+      placeholder="Last Name"
+      required=""
+    />
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      placeholder="Email Address"
+      required=""
+    />
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      placeholder="Password"
+      required=""
+    />
+    <input
+      type="text"
+      class="form-control"
+      name="city"
+      placeholder="City"
+      required=""
+    />
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Login
+    </button>
+  </form>
+</div>
+<%- include("partials/footer"); %>
