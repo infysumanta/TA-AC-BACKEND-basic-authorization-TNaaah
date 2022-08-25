@@ -1,0 +1,38 @@
+<%- include("partials/header"); %>
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header"><h2>Your Podcast</h2></div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Subscription Type</th>
+          <th>Verified</th>
+          <th>Author</th>
+        </tr>
+        <% podcasts.forEach(podcast => { %>
+        <tr>
+          <td><%= podcast.title %></td>
+          <td><%= podcast.description %></td>
+          <td><%= podcast.subscriptionType %></td>
+          <td>
+            <% if(podcast.verified){ %>
+            <button class="btn btn-success btn-sm">
+              <%= podcast.verified %>
+            </button>
+            <% }else{ %>
+            <button class="btn btn-danger btn-sm">
+              <%= podcast.verified %>
+            </button>
+            <%} %>
+          </td>
+          <td><%= podcast.author.name %></td>
+        </tr>
+        <% })%>
+      </table>
+    </div>
+  </div>
+</div>
+<%- include("partials/footer"); %>

@@ -38,6 +38,8 @@ body {
   width: 100%;
 }
 
-input {
+input,
+select,
+textarea {
   margin-bottom: 10px;
 }

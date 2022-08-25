@@ -2,29 +2,23 @@
 <div class="wrapper">
   <form class="form-signin" method="POST" action="/users/register">
     <h2 class="form-signin-heading">Create Account</h2>
-    <% //if(error) { %>
-    <legend class="color-danger"><%= //error %></legend>
-    <% //} %>
+    <% if(error) { %>
+    <legend class="text-danger"><%= error %></legend>
+    <% } %>
+
     <input
       type="text"
       class="form-control"
-      name="firstName"
-      placeholder="First Name"
+      name="name"
+      placeholder="Name"
       required=""
       autofocus=""
-    />
-    <input
-      type="text"
-      class="form-control"
-      name="lastName"
-      placeholder="Last Name"
-      required=""
     />
     <input
       type="email"
       class="form-control"
       name="email"
-      placeholder="Email Address"
+      placeholder="Email"
       required=""
     />
     <input
@@ -34,13 +28,16 @@
       placeholder="Password"
       required=""
     />
-    <input
-      type="text"
-      class="form-control"
-      name="city"
-      placeholder="City"
-      required=""
-    />
+    <select class="form-control" name="type">
+      <option value="user" selected>User</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <select class="form-control" name="subscription">
+      <option value="Free" selected>Free</option>
+      <option value="VIP">VIP</option>
+      <option value="PREMIUM">PREMIUM</option>
+    </select>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">
       Login
