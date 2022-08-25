@@ -1,0 +1,47 @@
+<%- include("partials/header"); %>
+<div class="wrapper">
+  <form class="form-signin" method="POST" action="/users/register">
+    <h2 class="form-signin-heading">Create Account</h2>
+    <% if(error) { %>
+    <legend class="text-danger"><%= error %></legend>
+    <% } %>
+
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      placeholder="Name"
+      required=""
+      autofocus=""
+    />
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      placeholder="Email"
+      required=""
+    />
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      placeholder="Password"
+      required=""
+    />
+    <select class="form-control" name="type">
+      <option value="user" selected>User</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <select class="form-control" name="subscription">
+      <option value="Free" selected>Free</option>
+      <option value="VIP">VIP</option>
+      <option value="PREMIUM">PREMIUM</option>
+    </select>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Login
+    </button>
+  </form>
+</div>
+<%- include("partials/footer"); %>

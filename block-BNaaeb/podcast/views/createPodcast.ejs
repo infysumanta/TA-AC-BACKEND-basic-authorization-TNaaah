@@ -1,0 +1,29 @@
+<%- include("partials/header"); %>
+<div class="wrapper">
+  <form class="form-signin" method="POST" action="/podcasts/save">
+    <h2 class="form-signin-heading">Create Podcast</h2>
+    <% if(error) { %>
+    <legend class="text-danger"><%= error %></legend>
+    <% } %>
+
+    <input
+      type="text"
+      class="form-control"
+      name="title"
+      placeholder="Podcast Title"
+      required=""
+      autofocus=""
+    />
+    <textarea
+      class="form-control"
+      name="description"
+      rows="3"
+      placeholder="Description"
+    ></textarea>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Create Podcast
+    </button>
+  </form>
+</div>
+<%- include("partials/footer"); %>

@@ -1,0 +1,9 @@
+<%- include("partials/header"); %>
+<div class="container mt-5 text-center">
+  <span style="font-size: 10em; font-weight: bold"><%= error.status %></span>
+</div>
+<div class="container-fluid">
+  <h1><%= message %></h1>
+  <pre><%= error.stack %></pre>
+</div>
+<%- include("partials/footer"); %>
