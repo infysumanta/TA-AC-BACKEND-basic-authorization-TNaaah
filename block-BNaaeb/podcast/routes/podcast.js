@@ -34,4 +34,12 @@ router.post("/save", function (req, res, next) {
   });
 });
 
+router.get("/verified/:flag", (req, res, next) => {
+  let flag = req.params.flag == "true" ? true : false;
+  Podcast.findByIdAndUpdate({ verified: flag }, (err, podcast) => {
+    if (err) return next(err);
+    res.redirect("/users/");
+  });
+});
+
 module.exports = router;
