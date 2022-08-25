@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const bcrypt = require("bcrypt");
 var userSchema = new Schema(
   {
     name: { type: String, require: true },
@@ -13,7 +13,7 @@ var userSchema = new Schema(
       required: true,
       default: "Free",
     },
-    uploadPodcast: [
+    uploadedPodcast: [
       {
         type: Schema.Types.ObjectId,
         ref: "Podcast",
@@ -36,7 +36,7 @@ userSchema.pre("save", function (next) {
   }
 });
 
-userSchema.methods.verifyPassword = function (password, cb) {
+userSchema.methods.comparePassword = function (password, cb) {
   bcrypt.compare(password, this.password, (err, result) => {
     return cb(err, result);
   });
